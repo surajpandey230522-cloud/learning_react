@@ -85,12 +85,21 @@ function Event(){
 
 function Form(){
   const [name,setName]=useState("")
+  
+  function submit(event){
+    event.preventDefault();
 
+    if(!name.trim()){
+      alert("please enter the name")
+    }
+    alert(`Name:${name}`)
+  }
   return(
-    <div>
+    <form onSubmit={submit}>
       <input value={name} onChange={(event)=>setName(event.target.value)} placeholder="Enter the name"/>
       <h2>Data:{name}</h2>
-    </div>
+      <button type="submit">submit</button>
+    </form>
   )
 }
 
