@@ -81,6 +81,19 @@ function Event(){
   )
 }
 
+//handle input with state.............................................//
+
+function Form(){
+  const [name,setName]=useState("")
+
+  return(
+    <div>
+      <input value={name} onChange={(event)=>setName(event.target.value)} placeholder="Enter the name"/>
+      <h2>Data:{name}</h2>
+    </div>
+  )
+}
+
 
 function App() {
   return (
@@ -95,6 +108,7 @@ function App() {
       <Data/>
       <Footer/> */}
       <Event/>
+      <Form/>
     </div>
   );
 }
