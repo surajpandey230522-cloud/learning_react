@@ -125,6 +125,26 @@ function Form(){
 }
 
 
+function Form1(){
+  const [updates,setUpdates]=useState([
+    "suraj",
+    "adarsh"
+  ])
+
+  function addItem(){
+    setUpdates([...updates,"aman"])
+  }
+
+  return (
+    <div>
+    <h2>data</h2>
+    {updates.map((update)=>(
+    <p key={update}>{update}</p>
+    ))}
+    <button onClick={addItem}>click ere!</button>
+    </div> 
+  )
+}
 
 
 function App() {
@@ -140,7 +160,9 @@ function App() {
       <Data/>
       <Footer/> */}
       {/* <Event/> */}
+      <Form1/>
       <Form/>
+      
     </div>
   );
 }
