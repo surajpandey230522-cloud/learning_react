@@ -31,7 +31,7 @@ function Counter() {
   );
 }
 
-//useState...........................................................//
+//useState..................with string.........................................//
 
 function Student1(){
   const[name,setName]=useState("suraj")
@@ -43,7 +43,7 @@ function Student1(){
   </div>
   )
 }
-//useState....................................................................//
+//useState..............with array......................................................//
 function Data() {
   const [students, setStudents] = useState([
     "Suraj",
@@ -81,33 +81,52 @@ function Event(){
   )
 }
 
-//handle input with state.............................................//
+//handle input with state...............form..............................//
 
 function Form(){
   const [name,setName]=useState("")
+  const [age,setAge]=useState("")
+  const [result,setResult]=useState(null)
   
   function submit(event){
     event.preventDefault();
 
-    if(!name.trim()){
-      alert("please enter the name")
+    if(!name.trim()||!age){
+      alert("please enter the name and age")
+      return;
     }
-    alert(`Name:${name}`)
+    
+    setResult({name:name,age:age})
+    
   }
   return(
+    <div>
+      <h1>Student Data</h1>
     <form onSubmit={submit}>
-      <input value={name} onChange={(event)=>setName(event.target.value)} placeholder="Enter the name"/>
-      <h2>Data:{name}</h2>
+      <input type="text" value={name} onChange={(event)=>setName(event.target.value)} placeholder="Enter the name"/>
+      <br></br>
+      <input type="number" min="1" value={age} onChange={(event)=>setAge(event.target.value)} placeholder="Enter age"/>
+      <br></br>
       <button type="submit">submit</button>
     </form>
+    {result&&(
+      <div>
+       <h2>student data</h2>
+      <p>Name:{result.name}</p>
+      <p>Age:{result.age}</p>
+        </div>
+    )}
+    </div>
   )
 }
+
+
 
 
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <h1>Welcome to React</h1>
       <p>I am learning React step by step.</p>
       <Student name="Suraj Pandey"/>
@@ -116,7 +135,7 @@ function App() {
       <Student1/>
       <Data/>
       <Footer/> */}
-      <Event/>
+      {/* <Event/> */}
       <Form/>
     </div>
   );
