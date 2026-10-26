@@ -103,7 +103,11 @@ function Form(){
     <div>
       <h1>Student Data</h1>
     <form onSubmit={submit}>
-      <input type="text" value={name} onChange={(event)=>setName(event.target.value)} placeholder="Enter the name"/>
+      <input type="text" value={name} onChange={(event)=>{   const value = event.target.value;
+
+         if (/^[a-zA-Z ]*$/.test(value)) {
+         setName(value);
+           }}} placeholder="Enter the name"/>
       <br></br>
       <input type="number" min="1" value={age} onChange={(event)=>setAge(event.target.value)} placeholder="Enter age"/>
       <br></br>
