@@ -152,6 +152,30 @@ function Form1(){
 
 
 
+// function App() {
+//   return (
+//     <div>
+//       {/* <Navbar /> */}
+//       {/* <h1>Welcome to React</h1>
+//       <p>I am learning React step by step.</p>
+//       <Student name="Suraj Pandey"/>
+//       <Student name="Adarsh DN Pathak"/>
+//       <Counter/>
+//       <Student1/>
+//       <Data/>
+//       <Footer/> */}
+//       {/* <Event/> */}
+//       {/* <Form1/> */}
+//       <Form/>
+      
+
+   
+//     </div>
+//   );
+// }
+
+//........................................class component.............................................................
+
 // class App extends Component{
 //   render(){
 //     let student={
@@ -175,31 +199,7 @@ function Form1(){
 //   };
 // };
 
-
-// function App() {
-//   return (
-//     <div>
-//       {/* <Navbar /> */}
-//       {/* <h1>Welcome to React</h1>
-//       <p>I am learning React step by step.</p>
-//       <Student name="Suraj Pandey"/>
-//       <Student name="Adarsh DN Pathak"/>
-//       <Counter/>
-//       <Student1/>
-//       <Data/>
-//       <Footer/> */}
-//       {/* <Event/> */}
-//       {/* <Form1/> */}
-//       <Form/>
-      
-
-   
-//     </div>
-//   );
-// }
-
-
-
+//....................................................//.........................................................
 
 // class App extends Component{
 //   constructor(props){
@@ -222,28 +222,44 @@ function Form1(){
 //   }
   
 // }
+
+//.........................................................................................................
+
+
 import { Component } from "react";
+
+// class App extends Component{
+//   constructor(props){
+//    super(props)
+//    this.state={
+//     name:""
+//    }
+//   }
+//   render(){
+//    return (
+    
+//     <div>
+//     <input 
+//     value={this.state.name}
+//     onChange={(event)=>{this.setState({name:event.target.value})}}
+//     placeholder="Enter the name"/>
+  
+//   <p>Name:{this.state.name}</p>
+//     </div>
+//    )    
+//    }
+// }
 
 class App extends Component{
   constructor(props){
-   super(props)
-   this.state={
-    name:""
-   }
+  super(props)
+
+  this.state={
+    name:"",
+    age:"",
+    result:""
   }
-  render(){
-   return (
-    
-    <div>
-    <input 
-    value={this.state.name}
-    onChange={(event)=>{this.setState({name:event.target.value})}}
-    placeholder="Enter the name"/>
-  
-  <p>Name:{this.state.name}</p>
-    </div>
-   )    
-   }
+  }
 }
 export default App;
 
