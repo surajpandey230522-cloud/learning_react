@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css';
 
 function Navbar() {
   return <h2>My Website</h2>;
@@ -147,6 +148,48 @@ function Form1(){
 }
 
 
+
+
+function Suraj() {
+
+    let student = {
+        name: "Suraj",
+        age: 21,
+        rollno: 101,
+        course: "React JS"
+    };
+
+    return (
+
+        <div className="container">
+
+            <h1>Student Management</h1>
+
+            <div className="card">
+
+                <h2>{student.name}</h2>
+
+                <p>Age: {student.age}</p>
+
+                <p>Roll No: {student.rollno}</p>
+
+                <p>Course: {student.course}</p>
+
+            </div>
+
+        </div>
+
+    );
+
+}
+
+
+
+
+
+
+
+
 function App() {
   return (
     <div>
@@ -160,9 +203,11 @@ function App() {
       <Data/>
       <Footer/> */}
       {/* <Event/> */}
-      <Form1/>
+      {/* <Form1/>
       <Form/>
-      
+       */}
+
+    <Suraj/>
     </div>
   );
 }
