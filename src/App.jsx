@@ -1,6 +1,5 @@
-import { Component, useState } from "react";
+
 import './App.css';
-import { color } from "motion";
 
 
 
@@ -90,7 +89,7 @@ function Event(){
 function Form(){
   const [name,setName]=useState("")
   const [age,setAge]=useState("")
-  const [result,setResult]=useState(null)
+  const [result,setResult]=useState("")
   
   function submit(event){
     event.preventDefault();
@@ -190,11 +189,11 @@ function Form1(){
 //       <Data/>
 //       <Footer/> */}
 //       {/* <Event/> */}
-//       {/* <Form1/>
+//       {/* <Form1/> */}
 //       <Form/>
-//        */}
+      
 
-//    
+   
 //     </div>
 //   );
 // }
@@ -202,25 +201,49 @@ function Form1(){
 
 
 
+// class App extends Component{
+//   constructor(props){
+//     super(props)
+//     this.state={
+//       count:0
+//     }
+//   }
+//   render(){
+// return(
+//   <div>
+    
+//     <h2>Counter:{this.state.count}</h2>
+
+//     <button onClick={()=>{this.setState({count:this.state.count+1})}}>Increase</button>
+//     <br></br>
+//     <button onClick={()=>{this.setState({count:this.state.count-1})}}>Decrease</button>
+//   </div>
+// )
+//   }
+  
+// }
+import { Component } from "react";
+
 class App extends Component{
   constructor(props){
-    super(props)
-    this.state={
-      count:0
-    }
+   super(props)
+   this.state={
+    name:""
+   }
   }
   render(){
-return(
-  <div>
-    <h2>Counter:{this.state.count}</h2>
-
-    <button onClick={()=>{this.setState({count:this.state.count+1})}}>Increase</button>
-    <br></br>
-    <button onClick={()=>{this.setState({count:this.state.count-1})}}>Decrease</button>
-  </div>
-)
-  }
+   return (
+    
+    <div>
+    <input 
+    value={this.state.name}
+    onChange={(event)=>{this.setState({name:event.target.value})}}
+    placeholder="Enter the name"/>
   
+  <p>Name:{this.state.name}</p>
+    </div>
+   )    
+   }
 }
 export default App;
 
