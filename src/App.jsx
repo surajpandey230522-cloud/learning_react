@@ -153,28 +153,28 @@ function Form1(){
 
 
 
-class App extends Component{
-  render(){
-    let student={
-      name:"Suraj Pandey",
-      age:21,
-      rollno:108,
-      course:"React"
-    };
-    return (
-      <div className="container">
-        <h1>Student Data</h1>
-       <div className="card">
-         <h2>{student.name}</h2>
-         <p>Age:{student.age}</p>
-         <p>Rollno:{student.rollno}</p>
-         <p>Course:{student.course}</p>
+// class App extends Component{
+//   render(){
+//     let student={
+//       name:"Suraj Pandey",
+//       age:21,
+//       rollno:108,
+//       course:"React"
+//     };
+//     return (
+//       <div className="container">
+//         <h1>Student Data</h1>
+//        <div className="card">
+//          <h2>{student.name}</h2>
+//          <p>Age:{student.age}</p>
+//          <p>Rollno:{student.rollno}</p>
+//          <p>Course:{student.course}</p>
 
-       </div>
-      </div>
-    );
-  };
-};
+//        </div>
+//       </div>
+//     );
+//   };
+// };
 
 
 // function App() {
@@ -199,6 +199,29 @@ class App extends Component{
 //   );
 // }
 
+
+
+
+class App extends Component{
+  constructor(props){
+    super(props)
+    this.state={
+      count:0
+    }
+  }
+  render(){
+return(
+  <div>
+    <h2>Counter:{this.state.count}</h2>
+
+    <button onClick={()=>{this.setState({count:this.state.count+1})}}>Increase</button>
+    <br></br>
+    <button onClick={()=>{this.setState({count:this.state.count-1})}}>Decrease</button>
+  </div>
+)
+  }
+  
+}
 export default App;
 
 
