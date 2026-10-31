@@ -1,5 +1,7 @@
 import { Component, useState } from "react";
 import './App.css';
+import { color } from "motion";
+
 
 
 function Navbar() {
@@ -151,49 +153,28 @@ function Form1(){
 
 
 
-function Suraj() {
-
-    let student = {
-        name: "Suraj",
-        age: 21,
-        rollno: 101,
-        course: "React JS"
-    };
-
-    return (
-
-        <div className="container">
-
-            <h1>Student Management</h1>
-
-            <div className="card">
-
-                <h2>{student.name}</h2>
-
-                <p>Age: {student.age}</p>
-
-                <p>Roll No: {student.rollno}</p>
-
-                <p>Course: {student.course}</p>
-
-            </div>
-
-        </div>
-
-    );
-
-}
-
-
 class App extends Component{
   render(){
+    let student={
+      name:"Suraj Pandey",
+      age:21,
+      rollno:108,
+      course:"React"
+    };
     return (
-      <div>
-        <p>my nmae is suraj</p>
+      <div className="container">
+        <h1>Student Data</h1>
+       <div className="card">
+         <h2>{student.name}</h2>
+         <p>Age:{student.age}</p>
+         <p>Rollno:{student.rollno}</p>
+         <p>Course:{student.course}</p>
+
+       </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 
 // function App() {
@@ -213,7 +194,7 @@ class App extends Component{
 //       <Form/>
 //        */}
 
-//     <Suraj/>
+//    
 //     </div>
 //   );
 // }
