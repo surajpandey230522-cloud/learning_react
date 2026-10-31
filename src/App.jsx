@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { Component, useState } from "react";
 import './App.css';
+
 
 function Navbar() {
   return <h2>My Website</h2>;
@@ -142,7 +143,7 @@ function Form1(){
     {updates.map((update)=>(
     <p key={update}>{update}</p>
     ))}
-    <button onClick={addItem}>click ere!</button>
+    <button onClick={addItem}>click here!</button>
     </div> 
   )
 }
@@ -184,33 +185,38 @@ function Suraj() {
 }
 
 
-
-
-
-
-
-
-function App() {
-  return (
-    <div>
-      {/* <Navbar /> */}
-      {/* <h1>Welcome to React</h1>
-      <p>I am learning React step by step.</p>
-      <Student name="Suraj Pandey"/>
-      <Student name="Adarsh DN Pathak"/>
-      <Counter/>
-      <Student1/>
-      <Data/>
-      <Footer/> */}
-      {/* <Event/> */}
-      {/* <Form1/>
-      <Form/>
-       */}
-
-    <Suraj/>
-    </div>
-  );
+class App extends Component{
+  render(){
+    return (
+      <div>
+        <p>my nmae is suraj</p>
+      </div>
+    )
+  }
 }
+
+
+// function App() {
+//   return (
+//     <div>
+//       {/* <Navbar /> */}
+//       {/* <h1>Welcome to React</h1>
+//       <p>I am learning React step by step.</p>
+//       <Student name="Suraj Pandey"/>
+//       <Student name="Adarsh DN Pathak"/>
+//       <Counter/>
+//       <Student1/>
+//       <Data/>
+//       <Footer/> */}
+//       {/* <Event/> */}
+//       {/* <Form1/>
+//       <Form/>
+//        */}
+
+//     <Suraj/>
+//     </div>
+//   );
+// }
 
 export default App;
 
