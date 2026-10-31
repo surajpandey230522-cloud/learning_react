@@ -226,7 +226,7 @@ function Form1(){
 //.........................................................................................................
 
 
-import { Component } from "react";
+
 
 // class App extends Component{
 //   constructor(props){
@@ -250,6 +250,8 @@ import { Component } from "react";
 //    }
 // }
 
+import { Component } from "react";
+
 class App extends Component{
   constructor(props){
   super(props)
@@ -257,9 +259,42 @@ class App extends Component{
   this.state={
     name:"",
     age:"",
-    result:""
+    result:null
   }
   }
+
+  submit = (event)=>{
+    event.preventDefault();
+    const {name,age}=this.state;
+    if(!name.trim()||!age){
+      alert("Please Enter The Data")
+      return;
+    }
+    this.setState({result:{name:name,age:age}})
+  }
+render(){
+ const{name,age,result}=this.state;
+  return(
+    <div>
+     <form onSubmit={this.submit}>
+     <input type="text" value={this.state.name} onChange={(event)=>this.setState({name:event.target.value})} placeholder='Enter the name'/>
+     <br></br>
+     <input type='number' value={this.state.age}  min="1" onChange={(event)=>this.setState({age:event.target.value})} placeholder='Enter the age'/>
+     <br />
+     <button type='submit'>submit</button>
+     </form>{result&&(
+      <div>
+        <h2>student data</h2>
+         <p>Name:{result.name}</p>
+         <p>Age:{result.age}</p>
+      </div>
+     )}
+    
+
+    </div>
+  )
+}
+
 }
 export default App;
 
