@@ -250,7 +250,7 @@ function Form1(){
 //    }
 // }
 
-import { Component } from "react";
+// import { Component } from "react";
 
 // class App extends Component{
 //   constructor(props){
@@ -300,77 +300,116 @@ import { Component } from "react";
 
 //...........................useEffect..........Api fetching.........................................
 
-import { Component } from "react";
+// import { Component } from "react";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      posts: [],
-      loading: true,
-      error: ""
-    };
-  }
+//     this.state = {
+//       posts: [],
+//       loading: true,
+//       error: ""
+//     };
+//   }
 
-  componentDidMount() {
-    this.getPosts();
-  }
+//   componentDidMount() {
+//     this.getPosts();
+//   }
 
-  getPosts = async () => {
-    try {
-      const response = await fetch(
-        ""
-      );
+//   getPosts = async () => {
+//     try {
+//       const response = await fetch(
+//         ""
+//       );
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch posts");
-      }
+//       if (!response.ok) {
+//         throw new Error("Failed to fetch posts");
+//       }
 
-      const data = await response.json();
+//       const data = await response.json();
 
-      this.setState({
-        posts: data.slice(0, 5)
-      });
+//       this.setState({
+//         posts: data.slice(0, 5)
+//       });
 
-    } catch (err) {
-      this.setState({
-        error: err.message
-      });
+//     } catch (err) {
+//       this.setState({
+//         error: err.message
+//       });
 
-    } finally {
-      this.setState({
-        loading: false
-      });
+//     } finally {
+//       this.setState({
+//         loading: false
+//       });
+//     }
+//   };
+
+//   render() {
+//     const { posts, loading, error } = this.state;
+
+//     if (loading) {
+//       return <p>Loading posts...</p>;
+//     }
+
+//     if (error) {
+//       return <p>Error: {error}</p>;
+//     }
+
+//     return (
+//       <div>
+//         <h1>Posts</h1>
+
+//         {posts.map((post) => (
+//           <article key={post.id}>
+//             <h3>{post.title}</h3>
+//             <p>{post.body}</p>
+//           </article>
+//         ))}
+//       </div>
+//     );
+//   }
+// }
+
+ import { Component } from "react";
+  class App extends Component{
+    constructor(props){
+    super(props)
+    this.state={
+      name:"",
+      age:"",
+      result:null
     }
-  };
-
-  render() {
-    const { posts, loading, error } = this.state;
-
-    if (loading) {
-      return <p>Loading posts...</p>;
     }
-
-    if (error) {
-      return <p>Error: {error}</p>;
-    }
+   submit =(event)=>{
+   event.preventDefault();
+   const {name,age}=this.state
+   if(!name.trim()||!age){
+    alert("please enter the data")
+    return ;
+   }
+   this.setState({result:{name:name,age:age}})
+   }
+  render(){
+    const{name,age,result}=this.state
 
     return (
       <div>
-        <h1>Posts</h1>
-
-        {posts.map((post) => (
-          <article key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </article>
-        ))}
+        <form onSubmit={this.submit}>
+        <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enetr the name'/>
+        <input type='number' value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter the Age' />
+        <button type='submit'>click here!</button>
+        </form>{result&&(
+          <div>
+            <h2>Student Data</h2>
+            <p> Name:{name}</p>
+            <p>Age:{age}</p>
+            </div>
+        )}
       </div>
-    );
+    )
   }
-}
-
+  }
 
 
 export default App;
