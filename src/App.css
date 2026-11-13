@@ -39,17 +39,20 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
 }
-
-nav {
-  display: flex;
- 
-  text-align: end;
-  gap: 50px;
-  padding: 10px;
+nav{
+    align-content: end;
+}
+.navbar {
+   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  height: 70px;
   background-color: #222;
+  padding-left: 10px;
 }
 
-nav a {
+.navbar a {
     color: white;
     text-decoration: none;
     font-size: 18px;
