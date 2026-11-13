@@ -3,17 +3,17 @@ import './App.css';
 
 
 
-function Navbar() {
-  return <h2>My Website</h2>;
-}
+// function Navbar() {
+//   return <h2>My Website</h2>;
+// }
 
-function Student(props){
-  return <p>Student Name:- {props.name}</p>
+// function Student(props){
+//   return <p>Student Name:- {props.name}</p>
   
-}
-function Footer(){
-  return <footer>Copy@right</footer>
-} 
+// }
+// function Footer(){
+//   return <footer>Copy@right</footer>
+// } 
 //useState......................................................//
 
 function Counter() {
@@ -256,74 +256,74 @@ function Form1(){
 
 // import { Component } from "react";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      posts: [],
-      loading: true,
-      error: ""
-    };
-  }
+//     this.state = {
+//       posts: [],
+//       loading: true,
+//       error: ""
+//     };
+//   }
 
-  componentDidMount() {
-    this.getPosts();
-  }
+//   componentDidMount() {
+//     this.getPosts();
+//   }
 
-  getPosts = async () => {
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
+//   getPosts = async () => {
+//     try {
+//       const response = await fetch(
+//         "https://jsonplaceholder.typicode.com/users"
+//       );
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch posts");
-      }
+//       if (!response.ok) {
+//         throw new Error("Failed to fetch posts");
+//       }
 
-      const data = await response.json();
+//       const data = await response.json();
 
-      this.setState({
-        posts: data.slice(0, 5)
-      });
+//       this.setState({
+//         posts: data.slice(0, 5)
+//       });
 
-    } catch (err) {
-      this.setState({
-        error: err.message
-      });
+//     } catch (err) {
+//       this.setState({
+//         error: err.message
+//       });
 
-    } finally {
-      this.setState({
-        loading: false
-      });
-    }
-  };
+//     } finally {
+//       this.setState({
+//         loading: false
+//       });
+//     }
+//   };
 
-  render() {
-    const { posts, loading, error } = this.state;
+//   render() {
+//     const { posts, loading, error } = this.state;
 
-    if (loading) {
-      return <p>Loading posts...</p>;
-    }
+//     if (loading) {
+//       return <p>Loading posts...</p>;
+//     }
 
-    if (error) {
-      return <p>Error: {error}</p>;
-    }
+//     if (error) {
+//       return <p>Error: {error}</p>;
+//     }
 
-    return (
-      <div>
-        <h1>Posts</h1>
+//     return (
+//       <div>
+//         <h1>Posts</h1>
 
-        {posts.map((post) => (
-          <article key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </article>
-        ))}
-      </div>
-    );
-  }
-}
+//         {posts.map((post) => (
+//           <article key={post.id}>
+//             <h3>{post.title}</h3>
+//             <p>{post.body}</p>
+//           </article>
+//         ))}
+//       </div>
+//     );
+//   }
+// }
 
 //..........................................................................................................................
 

@@ -1,4 +1,4 @@
-.container {
+/* .container {
     text-align: center;
     margin-top: 50px;
 }
@@ -26,5 +26,43 @@
 
 .card p {
     font-size: 18px;
+} */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+nav {
+    background: #222;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+h1 {
+    margin: 30px;
+    color: #222;
+}
+
+p, ul {
+    margin: 20px 30px;
+    font-size: 18px;
+}
