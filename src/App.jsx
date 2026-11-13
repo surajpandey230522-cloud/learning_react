@@ -254,7 +254,7 @@ function Form1(){
 
 //...........................useEffect..........Api fetching......................................................................
 
-import { Component } from "react";
+// import { Component } from "react";
 
 class App extends Component {
   constructor(props) {
@@ -422,6 +422,43 @@ class App extends Component {
 //     }
 // }
 
+
+import React, { Component } from 'react';
+
+import { Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Students from './pages/Students';
+import Contact from './pages/Contact';
+
+class App extends Component {
+
+    render() {
+
+        return (
+            <div>
+
+                <Navbar />
+
+                <Routes>
+
+                    <Route path="/" element={<Home />} />
+
+                    <Route path="/about" element={<About />} />
+
+                    <Route path="/students" element={<Students />} />
+
+                    <Route path="/contact" element={<Contact />} />
+
+                </Routes>
+
+            </div>
+        );
+    }
+}
 
 
 export default App;
