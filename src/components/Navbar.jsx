@@ -17,6 +17,10 @@ class Navbar extends Component {
                 <Link to="/students">Students</Link>
 
                 <Link to="/contact">Contact</Link>
+
+                <div><input type='text' placeholder='search here!'/><button>Search</button></div>
+
+                
              </div>
             </nav>
         );
