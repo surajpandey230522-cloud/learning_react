@@ -8,6 +8,7 @@ class Home extends Component {
             <div>
                 <h1>Home Page</h1>
                 <p>Welcome to our Student Management System.</p>
+                <p>it's for student data</p>
             </div>
         );
     }
