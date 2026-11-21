@@ -223,6 +223,48 @@ import './App.css';
   
 // }
 
+//..........................................................................................................................
+
+ import { Component } from "react";
+  class App extends Component{
+    constructor(props){
+    super(props)
+    this.state={
+      name:"",
+      age:"",
+      result:null
+    }
+    }
+   submit =(event)=>{
+   event.preventDefault();
+   const {name,age}=this.state
+   if(!name.trim()||!age){
+    alert("please enter the data")
+    return ;
+   }
+   this.setState({result:{name:name,age:age}})
+   }
+  render(){
+    const{name,age,result}=this.state
+
+    return (
+      <div>
+        <form onSubmit={this.submit}>
+        <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enetr the name'/>
+        <input type='number' value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter the Age' />
+        <button type='submit'>click here!</button>
+        </form>{result&&(
+          <div>
+            <h2>Student Data</h2>
+            <p> Name:{name}</p>
+            <p>Age:{age}</p>
+            </div>
+        )}
+      </div>
+    )
+  }
+  }
+
 //.................................................................................................................................
 
 
@@ -252,7 +294,7 @@ import './App.css';
 
 
 
-//...........................useEffect..........Api fetching......................................................................
+//...........................useEffect...........Api fetching.......................................................................
 
 // import { Component } from "react";
 
@@ -325,47 +367,7 @@ import './App.css';
 //   }
 // }
 
-//..........................................................................................................................
 
-//  import { Component } from "react";
-//   class App extends Component{
-//     constructor(props){
-//     super(props)
-//     this.state={
-//       name:"",
-//       age:"",
-//       result:null
-//     }
-//     }
-//    submit =(event)=>{
-//    event.preventDefault();
-//    const {name,age}=this.state
-//    if(!name.trim()||!age){
-//     alert("please enter the data")
-//     return ;
-//    }
-//    this.setState({result:{name:name,age:age}})
-//    }
-//   render(){
-//     const{name,age,result}=this.state
-
-//     return (
-//       <div>
-//         <form onSubmit={this.submit}>
-//         <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enetr the name'/>
-//         <input type='number' value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter the Age' />
-//         <button type='submit'>click here!</button>
-//         </form>{result&&(
-//           <div>
-//             <h2>Student Data</h2>
-//             <p> Name:{name}</p>
-//             <p>Age:{age}</p>
-//             </div>
-//         )}
-//       </div>
-//     )
-//   }
-//   }
 
 
 //.........................................................api......................................................................
@@ -423,43 +425,85 @@ import './App.css';
 // }
 
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Students from './pages/Students';
-import Contact from './pages/Contact';
+// import Home from './pages/Home';
+// import About from './pages/About';
+// import Students from './pages/Students';
+// import Contact from './pages/Contact';
 
-class App extends Component {
+// class App extends Component {
 
-    render() {
+//     render() {
 
-        return (
-            <div>
+//         return (
+//             <div>
 
-                <Navbar />
+//                 <Navbar />
 
-                <Routes>
+//                 <Routes>
 
-                    <Route path="/" element={<Home />} />
+//                     <Route path="/" element={<Home />} />
 
-                    <Route path="/about" element={<About />} />
+//                     <Route path="/about" element={<About />} />
 
-                    <Route path="/students" element={<Students />} />
+//                     <Route path="/students" element={<Students />} />
 
-                    <Route path="/contact" element={<Contact />} />
+//                     <Route path="/contact" element={<Contact />} />
 
-                </Routes>
+//                 </Routes>
 
-            </div>
-        );
-    }
+//             </div>
+//         );
+//     }
+// }
+
+
+// export default App;
+
+class App extends Component{
+  constructor(props){
+   super(props)
+   this.state={
+    Name:"",
+    Age:"",
+    Result:null
+   }
+  }
+ submit=(event)=>{
+  event.preventDefault();
+  const {Name,Age}=this.state;
+  if(!Name.trim(),!Age.trim()){
+     alert("enter the data")
+     return;
+  }
+  this.setState({Result:{Name:Name,Age:Age}})
+ }
+ render(){
+  const{Name,Age,Result}=this.state
+  return(
+    <div>
+      <form onSubmit={this.submit} >
+      <input type='text' value={this.state.Name} onChange={(event)=>{this.setState({Name:event.target.value})}} placeholder='enter the name'/>
+      <input type='number' value={this.state.Age} onChange={(event)=>{this.setState({Age:event.target.value})}} placeholder='enter the age'/>
+      <button type='submit'>submit</button>
+      </form>{Result&&
+      <div>
+        <h1>Student Data</h1>
+        <p>Name:{Name}</p>
+        <p>Age:{Age}</p>
+      </div>
+
+      }
+    </div>
+  )
+ }
+
 }
-
 
 export default App;
 
