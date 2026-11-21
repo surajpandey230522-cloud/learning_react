@@ -225,45 +225,45 @@ import './App.css';
 
 //..........................................................................................................................
 
- import { Component } from "react";
-  class App extends Component{
-    constructor(props){
-    super(props)
-    this.state={
-      name:"",
-      age:"",
-      result:null
-    }
-    }
-   submit =(event)=>{
-   event.preventDefault();
-   const {name,age}=this.state
-   if(!name.trim()||!age){
-    alert("please enter the data")
-    return ;
-   }
-   this.setState({result:{name:name,age:age}})
-   }
-  render(){
-    const{name,age,result}=this.state
+//  import { Component } from "react";
+//   class App extends Component{
+//     constructor(props){
+//     super(props)
+//     this.state={
+//       name:"",
+//       age:"",
+//       result:null
+//     }
+//     }
+//    submit =(event)=>{
+//    event.preventDefault();
+//    const {name,age}=this.state
+//    if(!name.trim()||!age){
+//     alert("please enter the data")
+//     return ;
+//    }
+//    this.setState({result:{name:name,age:age}})
+//    }
+//   render(){
+//     const{name,age,result}=this.state
 
-    return (
-      <div>
-        <form onSubmit={this.submit}>
-        <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enetr the name'/>
-        <input type='number' value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter the Age' />
-        <button type='submit'>click here!</button>
-        </form>{result&&(
-          <div>
-            <h2>Student Data</h2>
-            <p> Name:{name}</p>
-            <p>Age:{age}</p>
-            </div>
-        )}
-      </div>
-    )
-  }
-  }
+//     return (
+//       <div>
+//         <form onSubmit={this.submit}>
+//         <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enetr the name'/>
+//         <input type='number' value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter the Age' />
+//         <button type='submit'>click here!</button>
+//         </form>{result&&(
+//           <div>
+//             <h2>Student Data</h2>
+//             <p> Name:{name}</p>
+//             <p>Age:{age}</p>
+//             </div>
+//         )}
+//       </div>
+//     )
+//   }
+//   }
 
 //.................................................................................................................................
 
@@ -465,6 +465,7 @@ import './App.css';
 
 // export default App;
 
+ import { Component } from "react";
 class App extends Component{
   constructor(props){
    super(props)
