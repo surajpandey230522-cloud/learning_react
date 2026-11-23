@@ -1,4 +1,5 @@
 
+import { button } from 'motion/react-client';
 import './App.css';
 
 
@@ -465,52 +466,139 @@ import './App.css';
 
 // export default App;
 
- import { Component } from "react";
+//  import { Component } from "react";
+// class App extends Component{
+//   constructor(props){
+//    super(props)
+//    this.state={
+//     Name:"",
+//     Age:"",
+//     Result:null
+//    }
+//   }
+//  submit=(event)=>{
+//   event.preventDefault();
+//   const {Name,Age}=this.state;
+//   if(!Name.trim(),!Age.trim()){
+//      alert("enter the data")
+//      return;
+//   }
+//   this.setState({Result:{Name:Name,Age:Age}})
+//  }
+//  render(){
+//   const{Name,Age,Result}=this.state
+//   return(
+//     <div>
+//       <form onSubmit={this.submit} >
+//       <input type='text' value={this.state.Name} onChange={(event)=>{this.setState({Name:event.target.value})}} placeholder='enter the name'/>
+//       <input type='number' value={this.state.Age} onChange={(event)=>{this.setState({Age:event.target.value})}} placeholder='enter the age'/>
+//       <button type='submit'>submit</button>
+//       </form>{Result&&
+//       <div>
+//         <h1>Student Data</h1>
+//         <p>Name:{Name}</p>
+//         <p>Age:{Age}</p>
+//       </div>
+
+//       }
+//     </div>
+//   )
+//  }
+
+// }
+
+// export default App;
+
+
+
+// import { Component } from 'react';
+
+// class App extends Component{
+//   constructor(props){
+//     super(props)
+//     this.state={
+//       name:"",
+//       age:"",
+//       result:""
+//     }
+//   }
+//  submit =(event)=>{
+//   event.preventDefault();
+//   const{name,age}=this.state
+//   this.setState({result:{name:name,age:age}})
+//  }
+// render(){
+//   const {name,age,result}=this.state
+
+//   return(
+//     <div>
+//     <form onSubmit={this.submit}>
+//       <input type='text' value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='enter the name'/>
+//             <input type='number' value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='enter the age'/>
+//        <button type='submit'>submit</button>
+//     </form>{result&&
+//     <div>
+//       <h1>student data</h1>
+//        <p>name:{name}</p>
+//        <p>age:{age}</p>
+//     </div>
+
+//     }
+//     </div>
+//   )
+// }
+
+// }
+
+// export default App;
+
+
+// import { Component } from 'react';
+
+
+// class App extends Component{
+//   render(){
+//     this.state={
+//       name:"suraj",
+//       age:21,
+//       rollno:108
+//     }
+
+//     return(
+//       <div>
+//         <h1>My data</h1>
+//         <p>Name:{this.state.name}</p>
+//         <p>Age:{this.state.age}</p>
+//         <p>Rollno:{this.state.rollno}</p>
+//       </div>
+//     )
+//   }
+// }
+// export default App;
+
+import { Component } from 'react';
+
 class App extends Component{
   constructor(props){
-   super(props)
-   this.state={
-    Name:"",
-    Age:"",
-    Result:null
-   }
+     super(props)
+     this.state={
+      count:0
+     }
   }
- submit=(event)=>{
-  event.preventDefault();
-  const {Name,Age}=this.state;
-  if(!Name.trim(),!Age.trim()){
-     alert("enter the data")
-     return;
+
+  render(){
+ return(
+  <div>
+  <h3>Count:{this.state.count}</h3>
+  <button onClick={()=>{this.setState({count:this.state.count+1})}}>increase</button>
+  <br></br>
+   <button onClick={()=>{this.setState({count:this.state.count-1})}}>decrease</button>
+  </div>
+
+ )
   }
-  this.setState({Result:{Name:Name,Age:Age}})
- }
- render(){
-  const{Name,Age,Result}=this.state
-  return(
-    <div>
-      <form onSubmit={this.submit} >
-      <input type='text' value={this.state.Name} onChange={(event)=>{this.setState({Name:event.target.value})}} placeholder='enter the name'/>
-      <input type='number' value={this.state.Age} onChange={(event)=>{this.setState({Age:event.target.value})}} placeholder='enter the age'/>
-      <button type='submit'>submit</button>
-      </form>{Result&&
-      <div>
-        <h1>Student Data</h1>
-        <p>Name:{Name}</p>
-        <p>Age:{Age}</p>
-      </div>
-
-      }
-    </div>
-  )
- }
-
 }
-
 export default App;
-
-
-
-
 
 
 
