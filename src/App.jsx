@@ -1,5 +1,5 @@
 
-import { button } from 'motion/react-client';
+// import { button } from 'motion/react-client';
 import './App.css';
 
 
@@ -576,29 +576,79 @@ import './App.css';
 // }
 // export default App;
 
+// import { Component } from 'react';
+
+// class App extends Component{
+//   constructor(props){
+//      super(props)
+//      this.state={
+//       count:0
+//      }
+//   }
+
+//   render(){
+//  return(
+//   <div>
+//   <h3>Count:{this.state.count}</h3>
+//   <button onClick={()=>{this.setState({count:this.state.count+1})}}>increase</button>
+//   <br></br>
+//    <button onClick={()=>{this.setState({count:this.state.count-1})}}>decrease</button>
+//   </div>
+
+//  )
+//   }
+// }
+// export default App;
+
 import { Component } from 'react';
 
 class App extends Component{
   constructor(props){
-     super(props)
-     this.state={
-      count:0
-     }
+  super(props)
+  this.state={
+    id:"",
+    name:"",
+    age:"",
+    email:"",
+    result:null
   }
-
+  }
+    submit=(event)=>{
+    event.preventDefault();
+    const{id,name,age,email}=this.state
+    if(!name.trim()||!age.trim()|| !email.trim()|| !id.trim()){
+      alert("please Enter The Data")
+      return;
+    }
+    this.setState({result:{id:id,name:name,age:age,email:email}})
+  }
   render(){
- return(
-  <div>
-  <h3>Count:{this.state.count}</h3>
-  <button onClick={()=>{this.setState({count:this.state.count+1})}}>increase</button>
-  <br></br>
-   <button onClick={()=>{this.setState({count:this.state.count-1})}}>decrease</button>
-  </div>
-
- )
+    const{name,age,id,email,result}=this.state
+    return(
+      <div>
+        <form onSubmit={this.submit}>
+          <input type="number" value={this.state.id} onChange={(event)=>{this.setState({id:event.target.value})}} placeholder='Enter The Id'/>
+          <br></br>
+          <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enter The Name'/>
+          <br></br>
+          <input type="number" value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter The Age'/>
+          <br></br>
+          <input type="text" value={this.state.email} onChange={(event)=>{this.setState({email:event.target.value})}} placeholder='Enter The Email'/>
+          <br></br>
+          <button type='submit'>submit</button>
+        </form>{result&&(
+        <div>
+          <h1>Company Data</h1>
+          <p>ID:{id}</p>
+          <p>Name:{name}</p>
+          <p>Age:{age}</p>
+          <p>Email:{email}</p>
+        </div>
+        )
+        }
+      </div>
+    )
   }
 }
+
 export default App;
-
-
-
