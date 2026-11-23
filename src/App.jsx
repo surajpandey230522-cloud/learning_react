@@ -574,7 +574,7 @@ import './App.css';
 //     )
 //   }
 // }
-// export default App;
+//export default App;
 
 // import { Component } from 'react';
 
@@ -600,55 +600,91 @@ import './App.css';
 // }
 // export default App;
 
+// import { Component } from 'react';
+
+// class App extends Component{
+//   constructor(props){
+//   super(props)
+//   this.state={
+//     id:"",
+//     name:"",
+//     age:"",
+//     email:"",
+//     result:null
+//   }
+//   }
+//     submit=(event)=>{
+//     event.preventDefault();
+//     const{id,name,age,email}=this.state
+//     if(!name.trim()||!age.trim()|| !email.trim()|| !id.trim()){
+//       alert("please Enter The Data")
+//       return;
+//     }
+//     this.setState({result:{id:id,name:name,age:age,email:email}})
+//   }
+//   render(){
+//     const{name,age,id,email,result}=this.state
+//     return(
+//       <div>
+//         <form onSubmit={this.submit}>
+//           <input type="number" value={this.state.id} onChange={(event)=>{this.setState({id:event.target.value})}} placeholder='Enter The Id'/>
+//           <br></br>
+//           <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enter The Name'/>
+//           <br></br>
+//           <input type="number" value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter The Age'/>
+//           <br></br>
+//           <input type="text" value={this.state.email} onChange={(event)=>{this.setState({email:event.target.value})}} placeholder='Enter The Email'/>
+//           <br></br>
+//           <button type='submit'>submit</button>
+//         </form>{result&&(
+//         <div>
+//           <h1>Company Data</h1>
+//           <p>ID:{id}</p>
+//           <p>Name:{name}</p>
+//           <p>Age:{age}</p>
+//           <p>Email:{email}</p>
+//         </div>
+//         )
+//         }
+//       </div>
+//     )
+//   }
+// }
+
+//  export default App;
+
+
 import { Component } from 'react';
 
 class App extends Component{
   constructor(props){
-  super(props)
-  this.state={
-    id:"",
-    name:"",
-    age:"",
-    email:"",
-    result:null
-  }
-  }
-    submit=(event)=>{
-    event.preventDefault();
-    const{id,name,age,email}=this.state
-    if(!name.trim()||!age.trim()|| !email.trim()|| !id.trim()){
-      alert("please Enter The Data")
-      return;
+    super(props)
+    this.state={
+      user:[]
     }
-    this.setState({result:{id:id,name:name,age:age,email:email}})
+  }
+  componentDidCatch(){
+    fetch("").then(response=>response.json()).then(data=>{
+      this.setState({
+        user:data
+      })
+    })
   }
   render(){
-    const{name,age,id,email,result}=this.state
-    return(
+     return(
       <div>
-        <form onSubmit={this.submit}>
-          <input type="number" value={this.state.id} onChange={(event)=>{this.setState({id:event.target.value})}} placeholder='Enter The Id'/>
-          <br></br>
-          <input type="text" value={this.state.name} onChange={(event)=>{this.setState({name:event.target.value})}} placeholder='Enter The Name'/>
-          <br></br>
-          <input type="number" value={this.state.age} onChange={(event)=>{this.setState({age:event.target.value})}} placeholder='Enter The Age'/>
-          <br></br>
-          <input type="text" value={this.state.email} onChange={(event)=>{this.setState({email:event.target.value})}} placeholder='Enter The Email'/>
-          <br></br>
-          <button type='submit'>submit</button>
-        </form>{result&&(
-        <div>
-          <h1>Company Data</h1>
-          <p>ID:{id}</p>
-          <p>Name:{name}</p>
-          <p>Age:{age}</p>
-          <p>Email:{email}</p>
-        </div>
-        )
-        }
+    <h1>user Header</h1>
+
+    {this.state.user.map(user=>(
+      <div key={user.id}>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+
+
       </div>
-    )
+    ))}
+    </div>
+     )
   }
 }
-
 export default App;
